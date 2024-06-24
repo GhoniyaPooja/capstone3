@@ -2,8 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const registerForm = document.getElementById('registerForm');
 
     registerForm.addEventListener('submit', async (e) => {
-        e.preventDefault(); //default form submission
-
+        e.preventDefault(); 
         const fullName = document.getElementById('fullName').value.trim();
         const username = document.getElementById('username').value.trim();
         const password = document.getElementById('password').value.trim();
@@ -36,8 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 registerForm.reset();
                 displayMessage('Registration successful!', 'success');
                 setTimeout(() => {
-                    window.location.href = 'login.html'; // Redirect to login page
-                }, 2000); // Delay before redirecting (2 seconds)
+                    window.location.href = 'login.html'; 
+                }, 2000); // Delay before (2 seconds)
             }
         } catch (error) {
             console.error('Error during registration:', error);
