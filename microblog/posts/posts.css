@@ -1,1 +1,87 @@
-/* Posts Page CSS */
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1em 0;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+header nav a,
+header nav button {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+header nav button:hover,
+header nav a:hover {
+  background-color: #555;
+}
+
+main {
+  max-width: 800px;
+  margin: 2em auto;
+  padding: 0 1em;
+}
+
+footer {
+  text-align: center;
+  padding: 1em 0;
+  background-color: #333;
+  color: #fff;
+}
+
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+#postsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.post {
+  background-color: #fff;
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.post h3 {
+  margin: 0 0 0.5em;
+  color: #333;
+}
+
+.post p {
+  margin: 0 0 0.5em;
+  color: #555;
+}
+
+.post time {
+  display: block;
+  margin-top: 0.5em;
+  font-size: 0.875em;
+  color: #999;
+}
