@@ -2,6 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', async () => {
     const usernameElement = document.querySelector("#username");
+    const fullnameElement = document.querySelector('#fullname');
     const bioElement = document.querySelector("#bio");
     const editBioBtn = document.querySelector("#editBioBtn");
     const modal = document.getElementById("editBioModal");
@@ -21,7 +22,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     let loggedInUsername = '';
 
     try {
-        // Fetch user data to display in profile
+        //user data to display in profile
         const userResponse = await fetch(`${baseURL}/api/users/${loginData.username}`, {
             method: 'GET',
             headers: {
@@ -33,10 +34,10 @@ document.addEventListener('DOMContentLoaded', async () => {
       
 
         const userData = await userResponse.json();
-        loggedInUsername = userData.username; // Store the logged-in user's username
+        loggedInUsername = userData.username; 
         displayProfile(userData);
 
-        // Edit Bio button functionality
+        //Bio button
         editBioBtn.addEventListener('click', () => {
             bioTextarea.value = bioElement.textContent.replace('Bio: ', '');
             modal.style.display = "block";
@@ -54,7 +55,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             const newBio = bioTextarea.value;
 
             try {
-                // Update user bio
+                // Update bio
                 const updateResponse = await fetch(`${baseURL}/api/users/${loginData.username}`, {
                     method: 'PUT',
                     headers: {
@@ -73,7 +74,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         });
 
-        // Fetch and display posts when "Posts" button is clicked
+        //Get and display posts when "Posts" button is clicked
         postsBtn.addEventListener('click', async () => {
             try {
                 const postsResponse = await fetch(`${baseURL}/api/posts`, {
@@ -97,32 +98,28 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.error('Error fetching user profile:', error);
     }
 
-    // Logout functionality
+    // Logout
     logoutButton.addEventListener('click', () => {
         localStorage.removeItem('login-data');
         window.location.replace('../microblog/account/home.html');
     });
 });
 
-//to login data from localStorage
-function getLoginData() {
-    const loginJSON = window.localStorage.getItem('login-data');
-    return JSON.parse(loginJSON) || {};
-}
-
 //to display profile data
 function displayProfile(userData) {
     const usernameElement = document.querySelector("#username");
+    const fullnameElement = document.querySelector("#fullname");
     const bioElement = document.querySelector("#bio");
 
-    usernameElement.textContent = `${userData.username}`; // Display the username
+    usernameElement.textContent = `Username: ${userData.username}`; 
+    fullnameElement.textContent = `Full Name: ${userData.fullName || ''}`;
     bioElement.textContent = `Bio: ${userData.Bio || ''}`;
 }
 
 //to display posts
 function displayPosts(posts) {
     const profileContent = document.querySelector('.profile-content');
-    profileContent.innerHTML = ''; // Clear previous content
+    profileContent.innerHTML = ''; 
     if (posts.length === 0) {
         profileContent.innerHTML = '<p>No posts available.</p>';
     } else {
@@ -137,3 +134,4 @@ function displayPosts(posts) {
         });
     }
 }
+ 

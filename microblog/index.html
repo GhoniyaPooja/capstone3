@@ -10,6 +10,12 @@
 
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="index.css" />
+    <script src="account/auth.js"></script>
+    <script>
+      if (isLoggedIn() === false) {
+        window.location.replace("../account/login.html");
+      }
+    </script>
 
     <title>Login to the Microblog Network!</title>
   </head>
@@ -41,7 +47,8 @@
                   <img src="https://www.nicepng.com/png/full/933-9332131_profile-picture-default-png.png" alt="Profile Picture">
                 </div>
                 <div class="profile-details">
-                  <h1 id="username">Username</h1>
+                  <h3 id="username">Username</h3>
+                  <h3 id="fullname">Full Name</h3>
                   <p id="bio">Bio: Loading...</p>
                   <button id="editBioBtn">Edit Bio</button>
                 </div>
@@ -80,7 +87,7 @@
       <p>&copy; 2024 Microblog Network</p>
     </footer>
 
-    <script src="account/auth.js"></script>
+   
     <script>
       const loginLink = document.querySelector("#loginLink");
       const greetingSpan = document.querySelector("#greetingSpan");
