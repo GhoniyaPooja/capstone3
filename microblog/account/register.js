@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const fullName = document.getElementById('fullName').value;
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
+        const confirmpassword =document.getAnimations('confirm-password').value;
 
         if (!fullName || !username || !password) {
             displayMessage('Please fill out all fields.', 'danger');
@@ -22,7 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: JSON.stringify({
                     fullName: fullName,
                     username: username,
-                    password: password
+                    password: password,
+                    confirmpassword: confirmpassword
                 })
             });
 
@@ -35,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 displayMessage('Registration successful!', 'success');
                 setTimeout(() => {
                     window.location.href = 'login.html'; 
-                }, 2000); //Delay
+                }); 
             
         } catch (error) {
             console.error('Error during registration:', error);
