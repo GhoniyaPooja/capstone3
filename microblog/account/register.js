@@ -1,11 +1,12 @@
+"use strict"
 document.addEventListener('DOMContentLoaded', () => {
     const registerForm = document.getElementById('registerForm');
 
     registerForm.addEventListener('submit', async (e) => {
         e.preventDefault(); 
-        const fullName = document.getElementById('fullName').value.trim();
-        const username = document.getElementById('username').value.trim();
-        const password = document.getElementById('password').value.trim();
+        const fullName = document.getElementById('fullName').value;
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
 
         if (!fullName || !username || !password) {
             displayMessage('Please fill out all fields.', 'danger');
@@ -25,19 +26,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
             });
 
+           
             if (!response.ok) {
-                if (response.status === 409) {
-                    displayMessage('Username already exists. Please choose another username.', 'danger');
-                } else {
-                    throw new Error('Registration failed');
-                }
-            } else {
+                const errorData = await response.json();
+                throw new Error(errorData.message || 'Registration failed');
+            }
                 registerForm.reset();
                 displayMessage('Registration successful!', 'success');
                 setTimeout(() => {
                     window.location.href = 'login.html'; 
-                }, 2000); // Delay before (2 seconds)
-            }
+                }, 2000); //Delay
+            
         } catch (error) {
             console.error('Error during registration:', error);
             displayMessage('Registration failed. Please try again later.', 'danger');
