@@ -4,10 +4,10 @@ document.addEventListener("DOMContentLoaded", fetchPosts);
 
 async function fetchPosts() {
   const loginData = getLoginData();
-  if (!loginData.token) {
-    window.location.replace("../microblog/account/home.html");
-    return;
-  }
+//   if (!loginData.token) {
+//     window.location.replace("../microblog/account/home.html");
+//     return;
+//   }
 
   try {
     const response = await fetch(apiBaseURL + "/api/posts/", {
@@ -60,7 +60,7 @@ function displayPosts(posts) {
 }
 
 // Logout
-logoutButton.addEventListener("click", () => {
-  localStorage.removeItem("login-data");
-  window.location.replace("../microblog/account/home.html");
+logoutButton.addEventListener("click", (e) => {
+    e.preventDefault()
+  logout()
 });

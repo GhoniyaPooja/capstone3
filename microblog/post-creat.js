@@ -50,7 +50,8 @@ document.getElementById('createPostForm').addEventListener('submit', function(ev
   
 
   // Logout 
-  logoutButton.addEventListener('click', () => {
-    localStorage.removeItem('login-data');
-    window.location.replace('../microblog/account/home.html');
+  logoutButton.addEventListener("click", (e) => {
+    e.preventDefault()
+  logout()
 });
+

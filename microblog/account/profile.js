@@ -98,10 +98,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     // Logout
-    logoutButton.addEventListener('click', () => {
-        localStorage.removeItem('login-data');
-        window.location.replace('../microblog/account/home.html');
+    logoutButton.addEventListener("click", (e) => {
+        e.preventDefault()
+      logout()
     });
+    
 });
 
 //to display profile data
