@@ -67,21 +67,33 @@ h1 {
   padding: 1em;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  word-wrap: break-word; 
+  overflow: hidden;
+  white-space: normal;   
+  display: flex;
+  align-items: flex-start;
+  gap: 1em;
 }
 
-.post h3 {
-  margin: 0 0 0.5em;
-  color: #333;
+.post img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.post-content {
+  flex: 1;
+  word-wrap: break-word; 
+  overflow-wrap: break-word; 
+  white-space: normal;
 }
 
 .post p {
   margin: 0 0 0.5em;
   color: #555;
-}
-
-.post time {
-  display: block;
-  margin-top: 0.5em;
-  font-size: 0.875em;
-  color: #999;
+  word-wrap: break-word;
+  overflow: hidden;
+  white-space: normal;
 }

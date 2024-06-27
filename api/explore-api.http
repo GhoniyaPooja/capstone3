@@ -24,13 +24,13 @@ Content-Type: application/json
 
 ### Step 3) GET Users
 GET http://microbloglite.us-east-2.elasticbeanstalk.com/api/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlBvb2phIiwiaWF0IjoxNzE4OTgzNjA4LCJleHAiOjE3MTkwNzAwMDh9.-WXmKbO3WW8wQlgf0pkCkYsd00altfg3JECe9UqLkDU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlBvb2phIiwiaWF0IjoxNzE5NDk3NjU0LCJleHAiOjE3MTk1ODQwNTR9.gl2u8IqwoRyGnW4sOw4d3gJGJSHbCRp4B5mzOKjxNLM
 
 
 
 ### Step 4) GET One User
 GET http://microbloglite.us-east-2.elasticbeanstalk.com/api/users/Pooja
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlBvb2phIiwiaWF0IjoxNzE4OTgzNjA4LCJleHAiOjE3MTkwNzAwMDh9.-WXmKbO3WW8wQlgf0pkCkYsd00altfg3JECe9UqLkDU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlBvb2phIiwiaWF0IjoxNzE5NDk3NjU0LCJleHAiOjE3MTk1ODQwNTR9.gl2u8IqwoRyGnW4sOw4d3gJGJSHbCRp4B5mzOKjxNLM
 
 
 ### Step 5) Create a Post

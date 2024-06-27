@@ -55,7 +55,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             const newBio = bioTextarea.value;
 
             try {
-                // Update bio
                 const updateResponse = await fetch(`${baseURL}/api/users/${loginData.username}`, {
                     method: 'PUT',
                     headers: {
