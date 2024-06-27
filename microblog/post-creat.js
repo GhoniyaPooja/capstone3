@@ -18,7 +18,7 @@ document.getElementById('createPostForm').addEventListener('submit', function(ev
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${loginData.token}`
+        'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlBvb2phIiwiaWF0IjoxNzE4OTgzNjA4LCJleHAiOjE3MTkwNzAwMDh9.-WXmKbO3WW8wQlgf0pkCkYsd00altfg3JECe9UqLkDU`
       },
       body: JSON.stringify({
         text: postContent
