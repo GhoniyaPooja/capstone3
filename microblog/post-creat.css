@@ -96,3 +96,7 @@ header nav button:hover,
 header nav a:hover {
   background-color: #555;
 }
+
+header nav a.active {
+  background-color: gray;
+}

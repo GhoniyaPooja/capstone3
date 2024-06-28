@@ -32,6 +32,11 @@ body {
     background: none;
     cursor: pointer;
   }
+
+  header nav a.active {
+    background-color: gray;
+  }
+  
   .container {
     display: flex;
     justify-content: center;

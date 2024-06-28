@@ -37,6 +37,11 @@ header nav a:hover {
   background-color: #555;
 }
 
+
+header nav a.active {
+  background-color: gray;
+}
+
 main {
   max-width: 800px;
   margin: 2em auto;
